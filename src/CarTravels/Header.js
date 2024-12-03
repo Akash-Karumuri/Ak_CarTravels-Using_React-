@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header className='px-5 container-fluid fixed-top'>
+    <header className='px-3 container-fluid fixed-top'>
         <nav
             className="navbar navbar-expand-md py-2"
         >
