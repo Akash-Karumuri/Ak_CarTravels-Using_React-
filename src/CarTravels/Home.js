@@ -1,5 +1,5 @@
 import React from 'react'
-import mainBanner from './assets/about1.jpg'
+import mainBanner2 from './assets/mainbanner.png'
 import Toyota from './assets/Toyota.jpeg'
 import Hyundai from './assets/hyundai.jpg'
 import Fortuner from './assets/ToyotaFortuner.jpg'
@@ -44,19 +44,21 @@ const Home = () => {
   ];  
   return (
     <section className='container p-5 home-page'>
-        <div className='row'>
+        <div className='row my-4'>
             <div data-aos="fade-right" className='col-sm-12 col-lg-6 p-5'>
-                <h2 className='display-4'>Travel with Comfort, Style, and Safety</h2>
-                <p>Experience premier car rental services tailored for your travel needs.</p>
+                <h2 className='display-4 mt-3'>Travel with Comfort, Style, and Safety</h2>
+                <p>Experience premier car rental services tailored for your travel needs. Enjoy unparalleled comfort, reliability, and affordability on every ride. Whether it's a business trip or a family getaway, we've got you covered with our extensive fleet.</p>
                 <p>Welcome to <strong>AK Car Travels</strong>, where every journey begins with trust, comfort, and style. Whether you need a quick airport transfer, a luxurious ride for business meetings, or an adventurous road trip, we are here to make it happen. Choose from our wide fleet of well-maintained vehicles and experience a seamless travel service tailored to your needs.</p>
                 <NavLink to="/About" className="text-decoration-none text-primary me-3">Know More <i class="bi bi-chevron-right"></i></NavLink>
                 <NavLink to="/Cars" className="btn btn-primary">Book Now <i class="bi bi-chevron-right"></i></NavLink>
             </div>
-            <div className='col-sm-12 col-lg-6 center'>
-                <img className='mainBanner w-100' src={mainBanner}/>
+            <div className='col-sm-12 col-lg-6 p-5'>
+                {/* <img className='mainBanner w-100' src={mainBanner}/> */}
+                <h1 className='text-pop-up-top mt-3 text-center pt-5'><strong>Welcome to <br></br><span className='text-primary'>Ak Car Travels</span></strong></h1>
+                <img className='mainBanner mt-0 w-100' src={mainBanner2}/>
             </div>
         </div>
-        <div className='mt-5'>
+        <div className='mt-5 pt-5'>
           <h2>Our Premium Fleet</h2>
           <p>Take a look at some of our most popular vehicles</p>
         </div>
