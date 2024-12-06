@@ -53,8 +53,7 @@ const Home = () => {
                 <NavLink to="/Cars" className="btn btn-primary">Book Now <i class="bi bi-chevron-right"></i></NavLink>
             </div>
             <div className='col-sm-12 col-lg-6 p-5'>
-                {/* <img className='mainBanner w-100' src={mainBanner}/> */}
-                <h1 className='text-pop-up-top mt-3 text-center pt-5'><strong>Welcome to <br></br><span className='text-primary'>Ak Car Travels</span></strong></h1>
+                <h1 className='text-pop-up-top text-center pt-3'><strong>Welcome to <br></br><span className='text-primary'>Ak Car Travels</span></strong></h1>
                 <img className='mainBanner mt-0 w-100' src={mainBanner2}/>
             </div>
         </div>
