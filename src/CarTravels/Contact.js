@@ -1,6 +1,18 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
+import CustomerDetails from './admin/CustomerDetails';
 
 const Contact = () => {
+  const [fname,setfName]=useState("")
+  const [lname,setlName]=useState("")
+  const [email,setEmail]=useState("")
+  const [phone,setPhone]=useState("")
+  const submitHandler=(e)=>{
+    e.preventDefault();
+    axios.post(`http://localhost:4000/CustomerData` ,{fname,lname,email,phone})
+    .then((res)=>alert("Details Submitted Successfully"))
+    .catch((err)=>console.log(err))
+  }
   return (
     <section className='contact-page p-5 container-fluid'>
         <div className='row px-5'>
@@ -20,19 +32,15 @@ const Contact = () => {
             <div className='col-sm-12 col-lg-6 p-5 mt-5'>
                 <h2>Inquiry Form</h2>
                 <p>Use the form below to send us your queries or feedback.</p>
-                <form >
-                  <label htmlFor="name">Name:</label>
-                  <input type="text" id="name" name="name" placeholder="Enter your name" required></input>
-
-                  <label htmlFor="email">Email:</label>
-                  <input type="email" id="email" name="email" placeholder="Enter your email" required></input>
-
-                  <label htmlFor="phone">Phone Number:</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required></input>
-
-                  <label htmlFor="message">Message:</label>
-                  <textarea id="message" name="message" rows="2" placeholder="Type your message here" required></textarea>
-
+                <form onSubmit={submitHandler}>
+                  <label htmlFor="name">First Name: <span className='text-danger'>*</span></label>
+                  <input onChange={(e)=>setfName(e.target.value)} type="text" id="fname" name="fname" placeholder="Enter your first name" className='from-control' required></input>
+                  <label htmlFor="name">Last Name: <span className='text-danger'>*</span></label>
+                  <input onChange={(e)=>setlName(e.target.value)} type="text" id="lname" name="lname" placeholder="Enter your last name" className='from-control' required></input>
+                  <label htmlFor="email">Email: <span className='text-danger'>*</span></label>
+                  <input onChange={(e)=>setEmail(e.target.value)} type="email" id="email" name="email" placeholder="Enter your email" className='from-control' required></input>
+                  <label htmlFor="phone">Phone Number: <span className='text-danger'>*</span></label>
+                  <input onChange={(e)=>setPhone(e.target.value)} type="tel" id="phone" name="phone" placeholder="Enter your phone number" className='from-control' required></input>
                   <button type="submit">Submit</button>
                 </form>
             </div>

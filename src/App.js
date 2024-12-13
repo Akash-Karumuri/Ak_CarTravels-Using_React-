@@ -10,6 +10,15 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Header from './CarTravels/Header';
 import Footer from './CarTravels/Footer';
 import Routing from './CarTravels/Routing';
+import Store from './Components/Store';
+import CustomerDetails from './CarTravels/admin/CustomerDetails';
+import ViewCars from './CarTravels/admin/ViewCars';
+import AddCar from './CarTravels/admin/AddCar';
+import AddService from './CarTravels/admin/AddService';
+import ViewService from './CarTravels/admin/ViewService';
+import Contact from './CarTravels/Contact';
+import Services from './CarTravels/Services';
+import Cars from './CarTravels/Cars';
 
 function App() {
   useEffect(() => {
@@ -22,9 +31,17 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Header/>
+      {/* <Header/>
       <Routing/>
-      <Footer/>
+      <Footer/> */}
+      <Contact/>
+      <CustomerDetails/>
+      <Services/>
+      <AddService/>
+      <ViewService/>
+      <Cars/>
+      <AddCar/>
+      <ViewCars/>
     </div>
   );
 }
