@@ -1,5 +1,5 @@
 import React from 'react'
-import mainBanner2 from './assets/mainbanner.png'
+import mainBanner from './assets/mainbanner.png'
 import Toyota from './assets/Toyota.jpeg'
 import Hyundai from './assets/hyundai.jpg'
 import Fortuner from './assets/ToyotaFortuner.jpg'
@@ -54,7 +54,7 @@ const Home = () => {
             </div>
             <div className='col-sm-12 col-lg-6 p-5'>
                 <h1 className='text-pop-up-top text-center pt-3'><strong>Welcome to <br></br><span className='text-primary'>Ak Car Travels</span></strong></h1>
-                <img className='mainBanner mt-0 w-100' src={mainBanner2}/>
+                <img className='mainBanner mt-0 w-100' src={mainBanner}/>
             </div>
         </div>
         <div className='mt-5 pt-5'>

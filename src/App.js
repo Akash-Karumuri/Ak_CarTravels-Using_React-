@@ -19,6 +19,8 @@ import ViewService from './CarTravels/admin/ViewService';
 import Contact from './CarTravels/Contact';
 import Services from './CarTravels/Services';
 import Cars from './CarTravels/Cars';
+import NoPage from './CarTravels/NoPage';
+import Login from './CarTravels/admin/Login';
 
 function App() {
   useEffect(() => {
@@ -31,17 +33,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      {/* <Header/>
+      <Header/>
       <Routing/>
-      <Footer/> */}
-      <Contact/>
-      <CustomerDetails/>
-      <Services/>
-      <AddService/>
-      <ViewService/>
-      <Cars/>
-      <AddCar/>
-      <ViewCars/>
+      <Footer/>
     </div>
   );
 }

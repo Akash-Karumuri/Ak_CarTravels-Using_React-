@@ -44,6 +44,7 @@ const CustomerDetails = () => {
     
   return (
     <div className='container p-5'>
+        <h2 className='text-center mb-3'>Customer Details</h2>
         <table className='table table-bordered table-striped'>
             <thead>
                 <tr>

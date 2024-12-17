@@ -158,7 +158,24 @@ form button {
 form button:hover {
   background-color: #0056b3;
 }
-/* ======================================================view-cars-page============================================================================================ */
 .view-cars-page tr,th,td{
   width: 10%;
 }
+.dashboard aside{
+  border-right:1px solid black;
+}
+.dashboard h3{
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  cursor: pointer;
+}
+.dashboard aside button{
+  width: 80%;
+  height: 50px;
+  border:0;
+  margin-bottom: 15px;
+  background-color: #0b5ed7;
+  color: white;
+  border-radius: 5px;
+}
+

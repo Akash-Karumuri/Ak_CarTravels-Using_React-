@@ -6,6 +6,9 @@ import About from './About';
 import Services from './Services';
 import Cars from './Cars';
 import Contact from './Contact';
+import NoPage from './NoPage';
+import Login from './admin/Login';
+import Dashboard from './admin/Dashboard';
 
 const Routing = () => {
   return (
@@ -17,6 +20,9 @@ const Routing = () => {
       <Route path='/services' Component={Services} />
       <Route path='/cars' Component={Cars} />
       <Route path='/contact' Component={Contact} />
+      <Route path='/admin' Component={Login} />
+      <Route path='*' Component={NoPage} />
+      <Route path="/Dashboard" Component={Dashboard}/>
     </Routes>
     </>
   );
