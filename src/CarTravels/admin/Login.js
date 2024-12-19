@@ -22,11 +22,11 @@ const Login = () => {
         <div className='shadow p-5 col-lg-6 mx-auto'>
             <form onSubmit={SubmitHandler}>
                 <h2 className='text-center'>Admin Login</h2>
-                <label>UserName:</label>
-                <input onChange={ChangeData} type="text" id="UserName" name="userName" placeholder="userName" className='from-control mb-3' required></input>
-                <label>Password</label>
+                <label>Username:</label>
+                <input onChange={ChangeData} type="text" id="UserName" name="userName" placeholder="Username" className='from-control mb-3' required></input>
+                <label>Password:</label>
                 <input onChange={ChangeData}  type="password" id="password" name="password" placeholder="Enter Password" className='from-control mb-3' required></input>
-                <button type="submit">Submit</button>
+                <button type="submit" className='form-control btn btn-primary'>Submit</button>
             </form>
         </div>
     </div>

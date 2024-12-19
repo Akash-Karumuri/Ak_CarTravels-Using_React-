@@ -11,13 +11,13 @@ const AddService = () => {
     .catch((err)=>console.log(err))
    }
   return (
-    <div className='contaiuner p-5'>
+    <div className='container col-lg-6 mx-auto shadow p-5 m-5'>
         <h2>Add New Service</h2>
         <form onSubmit={AddNewService}>
         <label>Service Name:</label>
         <input onChange={(e)=>setTitle(e.target.value)} type="text" id="titleName" name="titleName" placeholder="Enter Service name" className='from-control' required></input>
         <label>Service Description:</label>
-        <input onChange={(e)=>setDescription(e.target.value)} type="description" id="type" name="description" placeholder="Enter Car Type" className='from-control' required></input>
+        <input onChange={(e)=>setDescription(e.target.value)} type="description" id="type" name="description" placeholder="Enter Description" className='from-control' required></input>
         <button type="submit">Submit</button>       
       </form>
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='text-bg-dark p-5 container-fluid'>
+    <footer className='text-bg-dark p-5 pb-0 container-fluid'>
       <div className="">
         <div className="row px-5">
           <div className="col-md-4">
@@ -28,10 +28,11 @@ const Footer = () => {
       
           <div className="col-md-3">
             <h4>Follow Us</h4>
-            <div>
+            <div className='lh-lg'>
               <a href="https://facebook.com" target="_blank" className="text-white text-decoration-none mr-3"><i className="bi bi-facebook"></i> Facebook</a> <br></br>
               <a href="https://twitter.com" target="_blank" className="text-white text-decoration-none mr-3"><i className="bi bi-twitter-x"></i> Twitter-X</a> <br></br>
-              <a href="https://instagram.com" target="_blank" className="text-white text-decoration-none"><i className="bi bi-instagram"></i> Instagram</a>
+              <a href="https://instagram.com" target="_blank" className="text-white text-decoration-none"><i className="bi bi-instagram"></i> Instagram</a> <br></br>
+              <a href="https://www.threads.net/" target="_blank" className="text-white text-decoration-none"><i className="bi bi-threads"></i> Threads</a>
             </div>
           </div>
         </div>

@@ -39,7 +39,7 @@ const ViewService = () => {
         .catch((err)=> console.log(err))
     }
   return (
-    <div className='container p-5'>
+    <div className='container p-5 view-service-page'>
         <h2 className='text-center mb-5'>Available Services</h2>
         <table className='table table-bordered table-striped'>
             <thead>
@@ -55,8 +55,8 @@ const ViewService = () => {
                     <td>{service.title}</td>
                     <td>{service.description}</td>
                     <td>
-                        <button onClick={() => getOneRecord(service.id)} data-bs-toggle="modal" data-bs-target="#updateService" className='btn btn-primary me-3'>Edit</button>
-                        <button onClick={() => deleteService(service.id)}  className='btn btn-danger'>Delete</button>
+                        <button onClick={() => getOneRecord(service.id)} data-bs-toggle="modal" data-bs-target="#updateService" className='btn btn-primary me-3 mb-2'>Edit</button>
+                        <button onClick={() => deleteService(service.id)}  className='btn btn-danger mb-2'>Delete</button>
                     </td>
                 </tr>)})}
             </tbody>
@@ -76,7 +76,7 @@ const ViewService = () => {
                 className="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md"
                 role="document"
             >
-                <div class="modal-content">
+                <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="modalTitleId">
                             Update Service

@@ -1,15 +1,29 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import CustomerDetails from './admin/CustomerDetails';
-
+import React, { useEffect, useState } from 'react'
 const Contact = () => {
   const [fname,setfName]=useState("")
   const [lname,setlName]=useState("")
   const [email,setEmail]=useState("")
   const [phone,setPhone]=useState("")
+  const [service, setService] = useState("");
+  const [car, setCar] = useState("");
+  const [days, setDays] = useState(1);
+  const [services, setServices] = useState([]);
+  const [cars, setCars] = useState([]);
+  useEffect(() => {
+    // Fetch service titles
+    axios.get('http://localhost:4000/Services')
+      .then(res => setServices(res.data))
+      .catch(err => console.log(err));
+
+    // Fetch car names
+    axios.get('http://localhost:4000/Cars')
+      .then(res => setCars(res.data))
+      .catch(err => console.log(err));
+  }, []);
   const submitHandler=(e)=>{
     e.preventDefault();
-    axios.post(`http://localhost:4000/CustomerData` ,{fname,lname,email,phone})
+    axios.post(`http://localhost:4000/CustomerData` ,{fname,lname,email,phone,service,car,days})
     .then((res)=>alert("Details Submitted Successfully"))
     .catch((err)=>console.log(err))
   }
@@ -41,6 +55,24 @@ const Contact = () => {
                   <input onChange={(e)=>setEmail(e.target.value)} type="email" id="email" name="email" placeholder="Enter your email" className='from-control' required></input>
                   <label htmlFor="phone">Phone Number: <span className='text-danger'>*</span></label>
                   <input onChange={(e)=>setPhone(e.target.value)} type="tel" id="phone" name="phone" placeholder="Enter your phone number" className='from-control' required></input>
+                  <label htmlFor="service">Service: <span className='text-danger'>*</span></label>
+                  <select onChange={(e) => setService(e.target.value)} id="service" name="service" className='form-control' required>
+                  <option value="">Select a service</option>
+                  {services.map(service => (
+                  <option key={service.id} value={service.title}>{service.title}</option>
+              ))}
+            </select>
+
+            <label htmlFor="car">Car: <span className='text-danger'>*</span></label>
+            <select onChange={(e) => setCar(e.target.value)} id="car" name="car" className='form-control' required>
+              <option value="">Select a car</option>
+              {cars.map(car => (
+                <option key={car.id} value={car.name}>{car.name}</option>
+              ))}
+            </select>
+
+            <label htmlFor="days">Number of Days: <span className='text-danger'>*</span></label>
+            <input onChange={(e) => setDays(e.target.value)} type="number" id="days" name="days" placeholder="Enter number of days" className='form-control' min="1" required />
                   <button type="submit">Submit</button>
                 </form>
             </div>

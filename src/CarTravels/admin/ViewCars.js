@@ -69,8 +69,8 @@ const ViewCars = () => {
                     <td>{car.features.toString()}</td>
                     <td>{car.pricePerDay} ₹</td>
                     <td>
-                        <button onClick={() => getOneRecord(car.id)} data-bs-toggle="modal" data-bs-target="#update1" className='btn btn-primary me-3'>Edit</button>
-                        <button onClick={() => deleteCar(car.id)} className='btn btn-danger'>Delete</button>
+                        <button onClick={() => getOneRecord(car.id)} data-bs-toggle="modal" data-bs-target="#update1" className='btn btn-primary me-3 mb-2'>Edit</button>
+                        <button onClick={() => deleteCar(car.id)} className='btn btn-danger mb-2'>Delete</button>
                     </td>
                 </tr>)})}
             </tbody>
@@ -90,7 +90,7 @@ const ViewCars = () => {
                 className="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md"
                 role="document"
             >
-                <div class="modal-content">
+                <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="modalTitleId">
                             Update Car

@@ -14,7 +14,7 @@ const AddCar = () => {
     .catch((err)=>console.log(err))
    }
   return (
-    <div className='container p-5'>
+    <div className='container col-lg-6 mx-auto shadow p-5 m-5'>
       <h2 className='text-center'>Add New Car</h2>
       <form onSubmit={AddNewCar}>
         <label>Car Name:</label>

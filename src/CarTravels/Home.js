@@ -44,13 +44,13 @@ const Home = () => {
   ];  
   return (
     <section className='container p-5 home-page'>
-        <div className='row my-4'>
+        <div className='row my-5'>
             <div data-aos="fade-right" className='col-sm-12 col-lg-6 p-5'>
                 <h2 className='display-4 mt-3'>Travel with Comfort, Style, and Safety</h2>
                 <p>Experience premier car rental services tailored for your travel needs. Enjoy unparalleled comfort, reliability, and affordability on every ride. Whether it's a business trip or a family getaway, we've got you covered with our extensive fleet.</p>
                 <p>Welcome to <strong>AK Car Travels</strong>, where every journey begins with trust, comfort, and style. Whether you need a quick airport transfer, a luxurious ride for business meetings, or an adventurous road trip, we are here to make it happen. Choose from our wide fleet of well-maintained vehicles and experience a seamless travel service tailored to your needs.</p>
-                <NavLink to="/About" className="text-decoration-none text-primary me-3">Know More <i class="bi bi-chevron-right"></i></NavLink>
-                <NavLink to="/Cars" className="btn btn-primary">Book Now <i class="bi bi-chevron-right"></i></NavLink>
+                <NavLink to="/About" className="text-decoration-none text-primary me-3">Know More <i className="bi bi-chevron-right"></i></NavLink>
+                <NavLink to="/Cars" className="btn btn-primary">Book Now <i className="bi bi-chevron-right"></i></NavLink>
             </div>
             <div className='col-sm-12 col-lg-6 p-5'>
                 <h1 className='text-pop-up-top text-center pt-3'><strong>Welcome to <br></br><span className='text-primary'>Ak Car Travels</span></strong></h1>
@@ -74,7 +74,7 @@ const Home = () => {
                                 <p className="m-0">{car.description}</p>
                             </figcaption>
                         </figure>
-                        <NavLink to="/Cars" className="btn btn-primary w-100 mt-3">Book Now <i class="bi bi-car-front-fill mx-2"></i></NavLink>
+                        <NavLink to="/Cars" className="btn btn-primary w-100 mt-3">Book Now <i className="bi bi-car-front-fill mx-2"></i></NavLink>
                       </div>
                   </div>
               </div>))
