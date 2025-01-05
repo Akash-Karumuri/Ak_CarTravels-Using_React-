@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import './Travel.css'
 import 'animate.css';
@@ -21,8 +21,9 @@ import Services from './CarTravels/Services';
 import Cars from './CarTravels/Cars';
 import NoPage from './CarTravels/NoPage';
 import Login from './CarTravels/admin/Login';
-
+export const loginStatus=createContext()
 function App() {
+  const [login,setLogin]=useState(false)
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -32,11 +33,13 @@ function App() {
     });
   }, []);
   return (
+    <loginStatus.Provider value={[login,setLogin]}>
     <div className="App">
       <Header/>
       <Routing/>
       <Footer/>
     </div>
+    </loginStatus.Provider>
   );
 }
 

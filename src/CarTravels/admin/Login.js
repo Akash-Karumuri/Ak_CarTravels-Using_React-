@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { loginStatus } from '../../App'
 
 const Login = () => {
     const [details,setDetails]=useState({})
+    const [login,setLogin]=useContext(loginStatus)
     const navigate=useNavigate()
     const ChangeData=(e)=>{
         setDetails({...details,[e.target.name]:e.target.value})
@@ -11,6 +13,7 @@ const Login = () => {
         e.preventDefault();
         const {userName,password}=details;
         if (userName==="karumuriakash888@gmail.com" && password==="Akash888"){
+            setLogin(true)
             navigate("/Dashboard")
         }
         else{

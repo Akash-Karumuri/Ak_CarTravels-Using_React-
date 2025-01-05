@@ -21,12 +21,20 @@ const Contact = () => {
       .then(res => setCars(res.data))
       .catch(err => console.log(err));
   }, []);
-  const submitHandler=(e)=>{
+  const submitHandler = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:4000/CustomerData` ,{fname,lname,email,phone,service,car,days})
-    .then((res)=>alert("Details Submitted Successfully"))
-    .catch((err)=>console.log(err))
-  }
+    axios
+      .post(`http://localhost:4000/CustomerData`, { fname, lname, email, phone, message })
+      .then((res) => {
+        alert("Details Submitted Successfully");
+        // Clear form fields
+        setfName("");
+        setlName("");
+        setEmail("");
+        setPhone("");
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <section className='contact-page p-5 container-fluid'>
         <div className='row px-5'>
@@ -41,20 +49,20 @@ const Contact = () => {
                 <h4><i className="bi bi-geo-alt-fill"></i> Address:</h4>
                 <p>AK Car Travels, <br></br>
                 Plot No. 123, Main Road, <br></br>
-                New Delhi, India – 110001.</p>
+                Kakinada, India – 533003.</p>
             </div>
             <div className='col-sm-12 col-lg-6 p-5 mt-5'>
                 <h2>Inquiry Form</h2>
-                <p>Use the form below to send us your queries or feedback.</p>
+                <p className='text-center'>Use the form below to send us your queries or feedback.</p>
                 <form onSubmit={submitHandler}>
                   <label htmlFor="name">First Name: <span className='text-danger'>*</span></label>
-                  <input onChange={(e)=>setfName(e.target.value)} type="text" id="fname" name="fname" placeholder="Enter your first name" className='from-control' required></input>
+                  <input onChange={(e)=>setfName(e.target.value)} value={fname} type="text" id="fname" name="fname" placeholder="Enter your first name" className='from-control' required></input>
                   <label htmlFor="name">Last Name: <span className='text-danger'>*</span></label>
-                  <input onChange={(e)=>setlName(e.target.value)} type="text" id="lname" name="lname" placeholder="Enter your last name" className='from-control' required></input>
+                  <input onChange={(e)=>setlName(e.target.value)} value={lname} type="text" id="lname" name="lname" placeholder="Enter your last name" className='from-control' required></input>
                   <label htmlFor="email">Email: <span className='text-danger'>*</span></label>
-                  <input onChange={(e)=>setEmail(e.target.value)} type="email" id="email" name="email" placeholder="Enter your email" className='from-control' required></input>
+                  <input onChange={(e)=>setEmail(e.target.value)} value={email} type="email" id="email" name="email" placeholder="Enter your email" className='from-control' required></input>
                   <label htmlFor="phone">Phone Number: <span className='text-danger'>*</span></label>
-                  <input onChange={(e)=>setPhone(e.target.value)} type="tel" id="phone" name="phone" placeholder="Enter your phone number" className='from-control' required></input>
+                  <input onChange={(e)=>setPhone(e.target.value)} value={phone} type="tel" id="phone" name="phone" placeholder="Enter your phone number" className='from-control' required></input>
                   <label htmlFor="service">Service: <span className='text-danger'>*</span></label>
                   <select onChange={(e) => setService(e.target.value)} id="service" name="service" className='form-control' required>
                   <option value="">Select a service</option>
@@ -72,7 +80,7 @@ const Contact = () => {
             </select>
 
             <label htmlFor="days">Number of Days: <span className='text-danger'>*</span></label>
-            <input onChange={(e) => setDays(e.target.value)} type="number" id="days" name="days" placeholder="Enter number of days" className='form-control' min="1" required />
+            <input onChange={(e) => setDays(e.target.value)} type="number" id="days" name="days" placeholder="Enter number of days" className='form-control' min="1" max="15" required />
                   <button type="submit">Submit</button>
                 </form>
             </div>
