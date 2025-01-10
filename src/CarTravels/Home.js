@@ -44,7 +44,7 @@ const Home = () => {
   ];  
   return (
     <section className='container p-5 home-page'>
-        <div className='row my-5'>
+        <div className='row my-3'>
             <div data-aos="fade-right" className='col-sm-12 col-lg-6 p-5'>
                 <h2 className='display-4 mt-3'>Travel with Comfort, Style, and Safety</h2>
                 <p>Experience premier car rental services tailored for your travel needs. Enjoy unparalleled comfort, reliability, and affordability on every ride. Whether it's a business trip or a family getaway, we've got you covered with our extensive fleet.</p>

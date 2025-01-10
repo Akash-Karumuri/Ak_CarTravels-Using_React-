@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Logo from './assets/Logo.png'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 const Header = () => {
+    const location = useLocation();
+    useEffect(() => {
+      const navbarToggler = document.querySelector('.navbar-collapse');
+      if (navbarToggler && navbarToggler.classList.contains('show')) {
+        navbarToggler.classList.remove('show');
+      }
+    }, [location]);
   return (
     <header className='px-3 container-fluid fixed-top mb-5'>
         <nav

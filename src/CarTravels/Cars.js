@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import AddCar from './admin/AddCar';
+import { NavLink } from 'react-router-dom';
 
 const Cars = () => {
     // const data = [
@@ -304,18 +305,18 @@ const Cars = () => {
                 car.map((car,index) => {
                     return (
                         <div data-aos="zoom-in" key={index} className='col-md-4 mb-3'>
-                            <div className='card'>
+                            <figure className='shadow'>
+                            <figcaption>
                                 <h4 className='px-3 py-2 m-0'><strong>{car.name}</strong></h4>
-                                <div className='card-body'>
-                                  <p className='px-3 pt-3 m-0'><strong>Type:</strong> {car.type}</p>
+                                <img src={car.imageUrl} alt={car.name} className="img-fluid rounded w-100"/>
+                                
+                                <p className='px-3 pt-3 m-0'><strong>Type:</strong> {car.type}</p>
                                   <p className='px-3 py-2 m-0'><strong>Seating Capacity:</strong> {car.seatingCapacity}</p>
-                                  <p className='px-3 py-2 m-0'><strong>Features:</strong> {car.features.toString()}</p>
-                                  <p className='px-3 py-2 pb-3 m-0'><strong>Price Per Day:</strong> {car.pricePerDay}₹</p>
-                                  <div className="d-flex justify-content-center pb-3">
-                                    <button className='btn btn-primary' type="submit" value="Submit">Book Now <i className="bi bi-car-front-fill mx-2"></i></button>
+                                  <div className="d-flex justify-content-center my-3">
+                                    <NavLink to={`/CarDetails/${car.id}`}><button className='btn btn-primary w-100'>Know More</button></NavLink>
                                   </div>
-                                </div>
-                            </div>
+                            </figcaption>
+                            </figure>
                         </div>
                     )
                 })

@@ -108,14 +108,14 @@ header{
     background-color: #0d6efd;
     color: white;
 }
-.cars .card {
-    background-color: #b9e0ff;
-    color: black;
+.cars figure{
+  border-radius: 10px;
 }
-.cars .card button{
-    width: 50%;
-    margin: auto;
-    align-self: center;
+.cars figure img{
+  height: 200px;
+}
+.CarDetails h4{
+  color: #0d6efd;
 }
 /* =========================================================Contact============================================================================== */
 
@@ -164,7 +164,7 @@ form button:hover {
 .dashboard aside{
   border-right:1px solid black;
 }
-.dashboard h3{
+.dashboard h4{
   cursor: pointer;
 }
 .dashboard aside button{

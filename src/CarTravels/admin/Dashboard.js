@@ -13,7 +13,7 @@ const Dashboard = () => {
     const [login,setLogin]=useContext(loginStatus)
     const DashboardView=()=>{
         if (view === "") {
-            return <Welcome />;
+            return <Welcome setView={setView} />;
         } 
         else if (view === "AddService") {
             return <AddService />;
