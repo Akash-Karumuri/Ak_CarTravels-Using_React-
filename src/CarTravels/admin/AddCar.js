@@ -4,13 +4,22 @@ import React, { useState } from 'react'
 const AddCar = () => {
    const [name,setName]=useState("")
    const [type,setType]=useState("")
+   const [imageUrl,setImageUrl]=useState("")
    const [seatingCapacity,setSeatingCapacity]=useState("")
    const [features,setFeatures]=useState("")
    const [pricePerDay,setPricePerPrice]=useState("")
    const AddNewCar=(e)=>{
     e.preventDefault();
-    axios.post(`http://localhost:4000/Cars` ,{name,type,seatingCapacity,features,pricePerDay})
-    .then((res)=>alert("Car Added Successfully"))
+    axios.post(`http://localhost:4000/Cars` ,{name,type,imageUrl,seatingCapacity,features,pricePerDay})
+    .then((res) => {
+      alert("Shirt Added Successfully")
+      setName("")
+      setType("")
+      setImageUrl("") 
+      setSeatingCapacity("")
+      setFeatures("")
+      setPricePerPrice("")
+    })
     .catch((err)=>console.log(err))
    }
   return (
@@ -18,15 +27,17 @@ const AddCar = () => {
       <h2 className='text-center'>Add New Car</h2>
       <form onSubmit={AddNewCar}>
         <label>Car Name:</label>
-        <input onChange={(e)=>setName(e.target.value)} type="text" id="name" name="name" placeholder="Enter Car name" className='from-control' required></input>
+        <input value={name} onChange={(e)=>setName(e.target.value)} type="text" id="name" name="name" placeholder="Enter Car name" className='from-control' required></input>
         <label>Car Type:</label>
-        <input onChange={(e)=>setType(e.target.value)} type="text" id="type" name="type" placeholder="Enter Car Type" className='from-control' required></input>
+        <input value={type} onChange={(e)=>setType(e.target.value)} type="text" id="type" name="type" placeholder="Enter Car Type" className='from-control' required></input>
+        <label>Image URL:</label>
+        <input value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} type="text" id="image" name="image" placeholder="Enter Image URL" className='form-control' required />
         <label>Seating Capacity:</label>
-        <input onChange={(e)=>setSeatingCapacity(e.target.value)} type="number" id="seatingCapacity" name="seatingCapacity" placeholder="Enter Seating Capacity" className='from-control' required></input>
+        <input value={seatingCapacity} onChange={(e)=>setSeatingCapacity(e.target.value)} type="number" id="seatingCapacity" name="seatingCapacity" placeholder="Enter Seating Capacity" className='from-control' required></input>
         <label>Car Features:</label>
-        <input onChange={(e)=>setFeatures(e.target.value)} type="text" id="features" name="features" placeholder="Enter Car Features" className='from-control' required></input>
+        <input value={features} onChange={(e)=>setFeatures(e.target.value)} type="text" id="features" name="features" placeholder="Enter Car Features" className='from-control' required></input>
         <label>Price per Day:</label>
-        <input onChange={(e)=>setPricePerPrice(e.target.value)} type="number" id="pricePerDay" name="pricePerDay" placeholder="Enter price per day" className='from-control' required></input>  
+        <input value={pricePerDay} onChange={(e)=>setPricePerPrice(e.target.value)} type="number" id="pricePerDay" name="pricePerDay" placeholder="Enter price per day" className='from-control' required></input>  
         <button type="submit">Submit</button>       
       </form>
     </div>

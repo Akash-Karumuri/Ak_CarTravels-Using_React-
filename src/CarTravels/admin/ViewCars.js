@@ -5,6 +5,7 @@ const ViewCars = () => {
     const [car,setCar]=useState([])
     const [name,setName]=useState("")
     const [type,setType]=useState("")
+    const [imageUrl, setImageUrl] = useState('');
     const [seatingCapacity,setSeatingCapacity]=useState("")
     const [features,setFeatures]=useState("")
     const [pricePerDay,setPricePerPrice]=useState("")
@@ -31,6 +32,7 @@ const ViewCars = () => {
         .then((res)=>{
             setName(res.data.name)
             setType(res.data.type)
+            setImageUrl(res.data.image);
             setSeatingCapacity(res.data.seatingCapacity)
             setFeatures(res.data.features)
             setPricePerPrice(res.data.pricePerDay)
@@ -42,8 +44,16 @@ const ViewCars = () => {
     // Updating Car
     const updateCar=(e)=>{
         e.preventDefault();
-        axios.put(`http://localhost:4000/Cars/${id}`,{id,name,type,seatingCapacity,features,pricePerDay})
-        .then((res)=>alert("Car Updated"))
+        axios.put(`http://localhost:4000/Cars/${id}`,{id,name,type,imageUrl,seatingCapacity,features,pricePerDay})
+        .then(() => {
+            alert('Car Updated');
+            setName('');
+            setType('');
+            setImageUrl('');
+            setSeatingCapacity('');
+            setFeatures('');
+            setPricePerPrice('');
+        })
         .catch((err)=> console.log(err))
     }
   return (
@@ -54,6 +64,7 @@ const ViewCars = () => {
                 <tr>
                     <th>Name</th>
                     <th>Type</th>
+                    <th>Image</th>
                     <th>Seating Capacity</th>
                     <th>Features</th>
                     <th>Price Per Day</th>
@@ -65,6 +76,7 @@ const ViewCars = () => {
                 return(<tr key={index}>
                     <td>{car.name}</td>
                     <td>{car.type}</td>
+                    <td><img src={car.imageUrl} alt={car.name} style={{ width: '100px', height: '70px', objectFit: 'cover' }} /></td>
                     <td>{car.seatingCapacity}</td>
                     <td>{car.features.toString()}</td>
                     <td>{car.pricePerDay} ₹</td>
@@ -108,6 +120,8 @@ const ViewCars = () => {
                           <input onChange={(e)=>setName(e.target.value)} type="text" id="name" name="name" placeholder="Enter Car name" value={name} className='from-control' required></input>
                           <label>Car Type:</label>
                           <input onChange={(e)=>setType(e.target.value)} type="text" id="type" name="type" placeholder="Enter Car Type" value={type} className='from-control' required></input>
+                          <label>Image URL:</label>
+                          <input onChange={(e) => setImageUrl(e.target.value)} type="text" id="image" name="image" placeholder="Enter Image URL" value={imageUrl} className='form-control' required />
                           <label>Seating Capacity:</label>
                           <input onChange={(e)=>setSeatingCapacity(e.target.value)} type="number" id="seatingCapacity" name="seatingCapacity" placeholder="Enter Seating Capacity" value={seatingCapacity} className='from-control' required></input>
                           <label>Car Features:</label>
