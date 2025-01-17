@@ -32,7 +32,7 @@ const ViewCars = () => {
         .then((res)=>{
             setName(res.data.name)
             setType(res.data.type)
-            setImageUrl(res.data.image);
+            setImageUrl(res.data.imageUrl);
             setSeatingCapacity(res.data.seatingCapacity)
             setFeatures(res.data.features)
             setPricePerPrice(res.data.pricePerDay)
