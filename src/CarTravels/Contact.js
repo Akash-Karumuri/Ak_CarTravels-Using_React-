@@ -24,7 +24,7 @@ const Contact = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:4000/CustomerData`, { fname, lname, email, phone, message })
+      .post(`http://localhost:4000/CustomerData`, { fname, lname, email, phone, service, car, days })
       .then((res) => {
         alert("Details Submitted Successfully");
         // Clear form fields
@@ -32,6 +32,9 @@ const Contact = () => {
         setlName("");
         setEmail("");
         setPhone("");
+        setService("");
+        setCar("");
+        setDays("");
       })
       .catch((err) => console.log(err));
   };
@@ -56,15 +59,15 @@ const Contact = () => {
                 <p className='text-center'>Use the form below to send us your queries or feedback.</p>
                 <form onSubmit={submitHandler}>
                   <label htmlFor="name">First Name: <span className='text-danger'>*</span></label>
-                  <input onChange={(e)=>setfName(e.target.value)} value={fname} type="text" id="fname" name="fname" placeholder="Enter your first name" className='from-control' required></input>
+                  <input onChange={(e)=>setfName(e.target.value)} value={fname} type="text" id="fname" name="fname" placeholder="Enter your first name" className='form-control' required></input>
                   <label htmlFor="name">Last Name: <span className='text-danger'>*</span></label>
-                  <input onChange={(e)=>setlName(e.target.value)} value={lname} type="text" id="lname" name="lname" placeholder="Enter your last name" className='from-control' required></input>
+                  <input onChange={(e)=>setlName(e.target.value)} value={lname} type="text" id="lname" name="lname" placeholder="Enter your last name" className='form-control' required></input>
                   <label htmlFor="email">Email: <span className='text-danger'>*</span></label>
-                  <input onChange={(e)=>setEmail(e.target.value)} value={email} type="email" id="email" name="email" placeholder="Enter your email" className='from-control' required></input>
+                  <input onChange={(e)=>setEmail(e.target.value)} value={email} type="email" id="email" name="email" placeholder="Enter your email" className='form-control' required></input>
                   <label htmlFor="phone">Phone Number: <span className='text-danger'>*</span></label>
-                  <input onChange={(e)=>setPhone(e.target.value)} value={phone} type="tel" id="phone" name="phone" placeholder="Enter your phone number" className='from-control' required></input>
+                  <input onChange={(e)=>setPhone(e.target.value)} value={phone} type="tel" id="phone" name="phone" placeholder="Enter your phone number" className='form-control' required></input>
                   <label htmlFor="service">Service: <span className='text-danger'>*</span></label>
-                  <select onChange={(e) => setService(e.target.value)} id="service" name="service" className='form-control' required>
+                  <select onChange={(e) => setService(e.target.value)} value={service} id="service" name="service" className='form-control' required>
                   <option value="">Select a service</option>
                   {services.map(service => (
                   <option key={service.id} value={service.title}>{service.title}</option>
@@ -72,7 +75,7 @@ const Contact = () => {
             </select>
 
             <label htmlFor="car">Car: <span className='text-danger'>*</span></label>
-            <select onChange={(e) => setCar(e.target.value)} id="car" name="car" className='form-control' required>
+            <select onChange={(e) => setCar(e.target.value)} value={car} id="car" name="car" className='form-control' required>
               <option value="">Select a car</option>
               {cars.map(car => (
                 <option key={car.id} value={car.name}>{car.name}</option>
@@ -80,7 +83,7 @@ const Contact = () => {
             </select>
 
             <label htmlFor="days">Number of Days: <span className='text-danger'>*</span></label>
-            <input onChange={(e) => setDays(e.target.value)} type="number" id="days" name="days" placeholder="Enter number of days" className='form-control' min="1" max="15" required />
+            <input onChange={(e) => setDays(e.target.value)} value={days} type="number" id="days" name="days" placeholder="Enter number of days" className='form-control' min="1" max="15" required />
                   <button type="submit">Submit</button>
                 </form>
             </div>
