@@ -179,3 +179,16 @@ form button:hover {
 .view-service-page,.view-cars-page,.view-customers-page{
   overflow-x: auto;
 }
+.view-cars h4{
+  background-color: #0d6efd;
+  color: white;
+}
+.view-cars figure{
+border-radius: 10px;
+}
+.view-cars figure img{
+height: 200px;
+}
+.view-cars .card{
+  height: 500px;
+}

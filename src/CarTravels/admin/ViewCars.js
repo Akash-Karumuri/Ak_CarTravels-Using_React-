@@ -57,94 +57,59 @@ const ViewCars = () => {
         .catch((err)=> console.log(err))
     }
   return (
-    <div className='container p-5 view-cars-page'>
-        <h2 className='text-center mb-5'>Available Cars</h2>
-        <table className='table table-bordered table-striped'>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Image</th>
-                    <th>Seating Capacity</th>
-                    <th>Features</th>
-                    <th>Price Per Day</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {car.map((car,index)=>{
-                return(<tr key={index}>
-                    <td>{car.name}</td>
-                    <td>{car.type}</td>
-                    <td><img src={car.imageUrl} alt={car.name} style={{ width: '100px', height: '70px', objectFit: 'cover' }} /></td>
-                    <td>{car.seatingCapacity}</td>
-                    <td>{car.features.toString()}</td>
-                    <td>{car.pricePerDay} ₹</td>
-                    <td>
-                        <button onClick={() => getOneRecord(car.id)} data-bs-toggle="modal" data-bs-target="#update1" className='btn btn-primary me-3 mb-2'>Edit</button>
-                        <button onClick={() => deleteCar(car.id)} className='btn btn-danger mb-2'>Delete</button>
-                    </td>
-                </tr>)})}
-            </tbody>
-        </table>
-        <div
-            className="modal fade"
-            id="update1"
-            tabindex="-1"
-            data-bs-backdrop="static"
-            data-bs-keyboard="false"
-            
-            role="dialog"
-            aria-labelledby="modalTitleId"
-            aria-hidden="true"
-        >
-            <div
-                className="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md"
-                role="document"
-            >
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title" id="modalTitleId">
-                            Update Car
-                        </h5>
-                        <button
-                            type="button"
-                            className="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
+    <section className='container view-cars p-5 mt-5'>
+    <h2 className='text-center mb-5'>Available Cars</h2>
+    <div className='row mt-5'>
+        {car.map((car, index) => (
+            <div data-aos="zoom-in" key={index} className='col-md-4 mb-3'>
+                <div className='card shadow'>
+                    <h4 className='px-3 py-2 m-0'><strong>{car.name}</strong></h4>
+                    <img src={car.imageUrl} alt={car.name} className='img-fluid rounded w-100' />
+                    <p className='px-3 pt-3 m-0'><strong>Type:</strong> {car.type}</p>
+                    <p className='px-3 py-2 m-0'><strong>Seating Capacity:</strong> {car.seatingCapacity}</p>
+                    <p className='px-3 py-2 m-0'><strong>Features:</strong> {car.features.toString()}</p>
+                    <p className='px-3 py-2 m-0'><strong>Price Per Day:</strong> {car.pricePerDay} ₹</p>
+                    <div className='p-3 d-flex d-flex flex-row-reverse'>
+                        <button onClick={() => getOneRecord(car.id)} data-bs-toggle="modal" data-bs-target="#updateCar" className='btn btn-primary'>Edit</button>
+                        <button onClick={() => deleteCar(car.id)} className='btn btn-danger mx-3'>Delete</button>
                     </div>
-                    <div className="modal-body">
+                </div>
+            </div>
+        ))}
+    </div>
+    
+    <div className="modal fade" id="updateCar" tabIndex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+            <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="modalTitleId">Update Car</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
                     <form onSubmit={updateCar}>
-                          <label>Car Name:</label>
-                          <input onChange={(e)=>setName(e.target.value)} type="text" id="name" name="name" placeholder="Enter Car name" value={name} className='from-control' required></input>
-                          <label>Car Type:</label>
-                          <input onChange={(e)=>setType(e.target.value)} type="text" id="type" name="type" placeholder="Enter Car Type" value={type} className='from-control' required></input>
-                          <label>Image URL:</label>
-                          <input onChange={(e) => setImageUrl(e.target.value)} type="text" id="image" name="image" placeholder="Enter Image URL" value={imageUrl} className='form-control' required />
-                          <label>Seating Capacity:</label>
-                          <input onChange={(e)=>setSeatingCapacity(e.target.value)} type="number" id="seatingCapacity" name="seatingCapacity" placeholder="Enter Seating Capacity" value={seatingCapacity} className='from-control' required></input>
-                          <label>Car Features:</label>
-                          <input onChange={(e)=>setFeatures(e.target.value)} type="text" id="features" name="features" placeholder="Enter Car Features" value={features} className='from-control' required></input>
-                          <label>Price per Day:</label>
-                          <input onChange={(e)=>setPricePerPrice(e.target.value)} type="number" id="pricePerDay" name="pricePerDay" placeholder="Enter price per day" value={pricePerDay} className='from-control' required></input>
-                          <div className="modal-footer">
-                        <button
-                            type="button"
-                            className="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                        <button type="submit">Submit</button>
+                        <label>Car Name:</label>
+                        <input onChange={(e) => setName(e.target.value)} type="text" id="name" name="name" placeholder="Enter Car Name" value={name} className='form-control' required />
+                        <label>Car Type:</label>
+                        <input onChange={(e) => setType(e.target.value)} type="text" id="type" name="type" placeholder="Enter Car Type" value={type} className='form-control' required />
+                        <label>Image URL:</label>
+                        <input onChange={(e) => setImageUrl(e.target.value)} type="text" id="image" name="image" placeholder="Enter Image URL" value={imageUrl} className='form-control' required />
+                        <label>Seating Capacity:</label>
+                        <input onChange={(e) => setSeatingCapacity(e.target.value)} type="number" id="seatingCapacity" name="seatingCapacity" placeholder="Enter Seating Capacity" value={seatingCapacity} className='form-control' required />
+                        <label>Car Features:</label>
+                        <input onChange={(e) => setFeatures(e.target.value)} type="text" id="features" name="features" placeholder="Enter Car Features" value={features} className='form-control' required />
+                        <label>Price Per Day:</label>
+                        <input onChange={(e) => setPricePerPrice(e.target.value)} type="number" id="pricePerDay" name="pricePerDay" placeholder="Enter Price Per Day" value={pricePerDay} className='form-control' required />
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" className="btn btn-success">Submit</button>
                         </div>
-                        </form>
-                    </div>
-                    
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</section>
+
   )
 }
 

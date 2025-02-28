@@ -10,6 +10,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Header from './CarTravels/Header';
 import Footer from './CarTravels/Footer';
 import Routing from './CarTravels/Routing';
+import { Provider } from 'react-redux';
+import { store } from './CarTravels/Redux/Store';
 export const loginStatus=createContext()
 function App() {
   const [login,setLogin]=useState(false)
@@ -24,9 +26,11 @@ function App() {
   return (
     <loginStatus.Provider value={[login,setLogin]}>
     <div className="App">
+      <Provider store={store}>
       <Header/>
       <Routing/>
       <Footer/>
+      </Provider>
     </div>
     </loginStatus.Provider>
   );
