@@ -1,0 +1,236 @@
+{
+  "CustomerData": [
+    {
+      "id": "49bc",
+      "fname": "Naga Prasanna Ratna Akash",
+      "lname": "Karumuri",
+      "email": "karumuriakash888@gmail.com",
+      "phone": "9392968885",
+      "service": "Airport Transfer",
+      "car": "Toyota Innova Crysta",
+      "days": "5"
+    },
+    {
+      "id": "c825",
+      "fname": "Sai",
+      "lname": "Karumuri",
+      "email": "SaiK@gmai.com",
+      "phone": "6301770236",
+      "service": "Customized Travel Plans",
+      "car": "Toyota Fortuner",
+      "days": "5"
+    },
+    {
+      "id": "5b41",
+      "fname": "chaitanya",
+      "lname": "k",
+      "email": "chaituchaitanya@gmail.com",
+      "phone": "9550196929",
+      "service": "Airport Transfers",
+      "car": "BMW X1",
+      "days": "2"
+    }
+  ],
+  "Cars": [
+    {
+      "id": "fb67",
+      "name": "Toyota Innova Crysta",
+      "type": "SUV",
+      "imageUrl": "https://www.deccanchronicle.com/h-upload/2024/02/23/1076822-innovahycrossagehablack.webp",
+      "seatingCapacity": "6",
+      "features": "Spacious Interior,Advanced Safety Features,Comfortable Seats,Powerful Performance",
+      "pricePerDay": "1800"
+    },
+    {
+      "id": "74b5",
+      "name": "Hyundai Verna",
+      "type": "Sedan",
+      "seatingCapacity": "7",
+      "features": [
+        "Sleek Design",
+        "Cutting-Edge Technology",
+        "Refined Interiors",
+        "Superior Fuel Efficiency"
+      ],
+      "pricePerDay": "2000",
+      "imageUrl": "https://lambahyundai.com/images/car-single/verna-left.png"
+    },
+    {
+      "id": "daa6",
+      "name": "Toyota Fortuner",
+      "type": "SUV",
+      "seatingCapacity": 7,
+      "features": [
+        "Commanding Presence",
+        "Spacious Seating",
+        "State-of-the-Art Features",
+        "Built for Rugged Terrains"
+      ],
+      "pricePerDay": 5000,
+      "imageUrl": "https://media.zigcdn.com/media/content/2021/Aug/1-super-white_0title.png?tr=w-1200"
+    },
+    {
+      "id": "3f2c",
+      "name": "BMW X1",
+      "type": "Luxury SUV",
+      "seatingCapacity": 5,
+      "features": [
+        "Sophisticated Design",
+        "Plush Interiors",
+        "High-End Performance",
+        "Memorable Travel Experience"
+      ],
+      "pricePerDay": 8000,
+      "imageUrl": "https://imgd.aeplcdn.com/664x374/n/szh050b_1640709.jpg?q=80"
+    },
+    {
+      "id": "38ee",
+      "name": "Maruti Suzuki Ertiga",
+      "type": "MPV",
+      "seatingCapacity": 7,
+      "features": [
+        "Ample Seating",
+        "Fuel Efficiency",
+        "Reliable Performance",
+        "Ideal for Family Outings"
+      ],
+      "pricePerDay": 1800,
+      "imageUrl": "https://www.popularmaruti.com/storage/upload/vehicle/colors/1650456604_prime-oxford-blue.png"
+    },
+    {
+      "id": "d4cd",
+      "name": "Audi Q7",
+      "type": "Luxury SUV",
+      "seatingCapacity": 5,
+      "features": [
+        "Advanced Technology",
+        "Spacious Cabin",
+        "Superior Comfort",
+        "Luxury and Power Combined"
+      ],
+      "pricePerDay": 9000,
+      "imageUrl": "https://platform.cstatic-images.com/in/v2/stock_photos/9ca17c5d-6dcf-4a85-ae03-177aea82e2ff/d3aabf42-578b-4058-aad0-acd916f1cdee.png"
+    },
+    {
+      "id": "b34e",
+      "name": "Volkswagen Polo",
+      "type": "Hatchback",
+      "seatingCapacity": 5,
+      "features": [
+        "Compact Design",
+        "Sporty Performance",
+        "Comfortable Ride",
+        "Fuel Efficiency"
+      ],
+      "pricePerDay": 1200,
+      "imageUrl": "https://imgd.aeplcdn.com/664x374/n/cw/ec/29628/polo-exterior-right-front-three-quarter-2.jpeg?q=80"
+    },
+    {
+      "id": "33ed",
+      "name": "Hyundai i20",
+      "type": "Hatchback",
+      "seatingCapacity": 5,
+      "features": [
+        "Stylish Design",
+        "Comfortable Ride",
+        "Modern Infotainment",
+        "Fuel Efficiency"
+      ],
+      "pricePerDay": 1200,
+      "imageUrl": "https://res.cloudinary.com/total-dealer/image/upload/w_3840,f_auto,q_75/v1/production/1ydfu0xsqqq0vd32xidtc5m4nhbz.png?_a=BACADKEv"
+    },
+    {
+      "id": "a6ea",
+      "name": "Tata Altroz",
+      "type": "Hatchback",
+      "seatingCapacity": 5,
+      "features": [
+        "Bold Styling",
+        "Spacious Cabin",
+        "High Safety Rating",
+        "Fuel Efficiency"
+      ],
+      "pricePerDay": 1300,
+      "imageUrl": "https://assets.timelinedaily.com/w/1203x902/2024/06/tata-altroz.png.webp"
+    },
+    {
+      "id": "f8e0",
+      "name": "Renault Triber",
+      "type": "MPV",
+      "seatingCapacity": 7,
+      "features": [
+        "Compact Design",
+        "Modular Seating",
+        "Air Conditioning",
+        "Budget Friendly"
+      ],
+      "pricePerDay": 1400,
+      "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3cQNDPzlmvbcUBlpsuApB79fKOGvynNieYEhMUX5tnNxLNAr6kL4vOiVIoxWJTa_5GMD80Q4dK0rznZX61bXtKrV6tSYv9HLO2mIF_iM9wUx26o1YiDuiFnS7VX15QQyhNn4QWMID9obv/d/triber.png"
+    },
+    {
+      "id": "0b18",
+      "name": "Maruti Suzuki Baleno",
+      "type": "Hatchback",
+      "seatingCapacity": 5,
+      "features": [
+        "Premium Design",
+        "Fuel Efficient",
+        "Smartplay Infotainment",
+        "Spacious Cabin"
+      ],
+      "pricePerDay": 1400,
+      "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202102/Maruti_Suzuki_Baleno_1200x768.png?size=1200:675"
+    },
+    {
+      "id": "c9be",
+      "name": "Nissan Magnite",
+      "type": "Compact SUV",
+      "seatingCapacity": 5,
+      "features": [
+        "Bold Design",
+        "Fuel Efficiency",
+        "Smart Features",
+        "Comfortable Ride"
+      ],
+      "pricePerDay": 1500,
+      "imageUrl": "https://imgd.aeplcdn.com/664x374/n/cw/ec/173325/magnite-facelift-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80"
+    }
+  ],
+  "Services": [
+    {
+      "title": "Airport Transfers",
+      "description": "Enjoy hassle-free transportation to and from the airport. Our professional drivers ensure punctual pickups and drop-offs, so you never have to worry about missing a flight or waiting long hours. Sit back and relax in our comfortable vehicles, whether you're arriving in style or heading out for your next adventure.",
+      "id": "3f63"
+    },
+    {
+      "title": "Business Travel Solutions",
+      "description": "For corporate clients, we offer specialized travel solutions that prioritize punctuality, professionalism, and comfort. Whether it's a single executive trip or group transportation for conferences and meetings, our fleet and experienced drivers are here to support your business goals.",
+      "id": "8471"
+    },
+    {
+      "title": "Tour Packages",
+      "description": "Explore stunning destinations with our thoughtfully designed tour packages. From scenic road trips to popular tourist spots, we provide customizable packages to suit your preferences. Whether you're traveling solo, with family, or in a group, we ensure your journey is as memorable as the destination.",
+      "id": "a7f8"
+    },
+    {
+      "title": "Event Transportation",
+      "description": "Make every event special with our seamless transportation services. Be it weddings, parties, corporate gatherings, or cultural events, our reliable fleet and skilled drivers ensure your guests arrive safely and on time, leaving you to focus on the event itself.",
+      "id": "f97e"
+    },
+    {
+      "title": "Customized Travel Plans",
+      "description": "Have a unique itinerary in mind? Our customized travel plans allow you to create a journey that matches your needs perfectly. From choosing the vehicle to planning routes and stops, we work closely with you to turn your travel ideas into reality.",
+      "id": "ccd0"
+    },
+    {
+      "title": "City Tours",
+      "description": "Discover the charm of your city or a new one with our guided city tours. Sit back and enjoy the ride as we take you to the most iconic spots and hidden gems.",
+      "id": "f798"
+    },
+    {
+      "id": "c9ab",
+      "title": "Outstation Trips",
+      "description": "Planning a long-distance journey? Our outstation travel services ensure you reach your destination comfortably and on time, with safe and reliable vehicles for extended trips."
+    }
+  ]
+}
